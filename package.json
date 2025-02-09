@@ -6,7 +6,10 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "dockerBuild": "docker build . -t node:test",
+    "dockerRun": "npm run dockerBuild && docker run -p 3000:3000 node:test",
+    "dockerDev": "docker compose -f docker-compose.dev.yml up"
   },
   "dependencies": {
     "next": "^15.1.6",
